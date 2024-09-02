@@ -1,0 +1,59 @@
+services:
+  postgresql:
+    image: postgres:12
+    ports:
+      - "5050:5432"
+    environment:
+      POSTGRES_DB: calculator
+      POSTGRES_USER: weuizx
+      POSTGRES_PASSWORD: weuizx
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  liquibase-migrations:
+    image: liquibase/liquibase:4.27.0
+    depends_on:
+      - postgresql
+    command:
+      - --changelog-file=classpath:migrations/master.xml
+      - --driver=org.postgresql.Driver
+      - --url=jdbc:postgresql://postgresql:5432/calculator
+      - --username=weuizx
+      - --password=weuizx
+      - update
+    volumes:
+      - ./migrations:/liquibase/changelog
+    networks:
+      - backend
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/calculator
+      SPRING_DATASOURCE_USERNAME: weuizx
+      SPRING_DATASOURCE_PASSWORD: weuizx
+    ports:
+      - "8080:8080"
+    depends_on:
+      - liquibase-migrations
+    networks:
+      - backend
+  frontend:
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - app
+    networks:
+      - backend
+
+volumes:
+  postgresql: {}
+
+networks:
+  backend: {}

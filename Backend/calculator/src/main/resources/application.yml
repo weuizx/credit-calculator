@@ -1,0 +1,20 @@
+app:
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5050/calculator
+    username: weuizx
+    password: weuizx
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:migrations/master.xml
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui

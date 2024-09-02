@@ -1,0 +1,45 @@
+@import '../../styles/constants';
+
+.header {
+  width: 100%;
+  background-color: $bg-color;
+  box-shadow: 0 2px 1.5rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+
+  @media (max-width: 520px) {
+    justify-content: center;
+  }
+}
+
+.image {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 1rem;
+  background-image: url('/src/assets/svg/main_logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s;
+}
+.text {
+  font-size: 2rem;
+  line-height: 8rem;
+  color: $dark-color;
+}
+
+.logo {
+  display: flex;
+  transition: 0.5s;
+
+  &:hover {
+    filter: invert(30%);
+  }
+  &:active {
+    filter: invert(50%);
+  }
+}

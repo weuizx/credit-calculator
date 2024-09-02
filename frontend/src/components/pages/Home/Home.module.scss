@@ -1,0 +1,96 @@
+@import '../../../styles/constants';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 7rem - 8rem);
+}
+
+.content {
+  background-color: $bg-color;
+  margin: 3rem 3rem;
+  padding: 2rem 4rem;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.25);
+}
+
+.main-title {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.title {
+  padding: 2.5rem 0;
+  font-size: 2rem;
+}
+
+.table {
+  overflow: auto;
+}
+
+.error {
+  font-size: 2rem;
+  text-align: center;
+  margin: 3rem;
+  color: red;
+}
+
+.text {
+  margin: 0 0 1.5rem;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 0.8rem;
+  border-radius: 50rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.page-item {
+  color: $primary-color;
+  list-style: none;
+  line-height: 4.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-link {
+  padding: 0 2rem;
+}
+
+.page-active {
+  color: #ffffff;
+  background: $primary-color;
+}
+
+.page-disabled {
+  color: grey;
+  pointer-events: none;
+}
+
+.message {
+  position: relative;
+  grid-column: 1 / -1;
+  text-align: center;
+  height: 1.8rem;
+}
+
+@media (hover: hover) {
+  .page-item:hover {
+    color: #ffffff;
+    background: $primary-color;
+  }
+}

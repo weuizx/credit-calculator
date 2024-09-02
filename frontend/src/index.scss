@@ -1,0 +1,53 @@
+@import './styles/reset';
+@import './styles/constants';
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("/src/assets/fonts/GolosText-Regular.ttf");
+}
+
+html {
+  font-size: 7px;
+}
+
+@media (min-width: 500px) {
+  html {
+    font-size: 10px;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Golos Text', sans-serif;
+}
+
+.container {
+  max-width: $xxl;
+  margin: auto;
+}
+
+.main {
+  background-image: url('/src/assets/jpeg/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.button .loader path {
+  fill: $light-text-color;
+}
+
+.button .loader {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.switch-input:checked + .switch-label + .switch-slider {
+  transform: translateX(0);
+}
+
+.switch-input#annuity:checked ~ .switch-slider {
+  left: 0.2rem;
+}
+
+.switch-input#differentiated:checked ~ .switch-slider {
+  transform: translateX(10.6rem);
+  width: 16.9rem;
+}

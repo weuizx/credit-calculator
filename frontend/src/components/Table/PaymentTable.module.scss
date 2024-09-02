@@ -1,0 +1,27 @@
+@import '../../styles/constants';
+
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table-head {
+  background-color: #e9ecef;
+}
+
+.cell {
+  padding: 10px;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
