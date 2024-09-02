@@ -1,18 +1,18 @@
 # Кредитный калькулятор
+
 Сервис предназначен для расчета графика платежей. Пользователь может указать сумму кредита, процентную ставку, дату начала выплат, срок кредита (в месяцах или годах), а также выбрать тип платежей: аннуитетные или дифференцированные. На основе указаных пользователем данных производится расчет и выводится таблица со следующими столбцами: дата платежа, сумма платежа, погашение долга, погашение процентов, остаток долга.
 
 ## Стек
-Backend: Java, PostgreSQL
 
-Frontend: TypeScript, React, SCSS Modules, MobX, Webpack 
+Backend: Java, Spring boot, PostgreSQL
 
-Proxy: Nginx
+Frontend: TypeScript, React, SCSS Modules, MobX, Webpack
 
 Docker
 
 ## Инструкция по установке
 
-1. Клонировать репозиторий `git clone https://github.com/MilanaKard/payments-calculator.git`
+1. Клонировать репозиторий `git clone https://github.com/weuizx/credit-calculator.git`
 2. Перейти в папку с файлом docker-compose.yml `cd backend/calculator`
 3. Развернуть docker-контейнеры `docker compose up`
 
